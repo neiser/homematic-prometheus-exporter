@@ -1,0 +1,14 @@
+[Unit]
+Description=Prometheus exporter for the Homematic XML API
+After=network.target
+
+[Service]
+User=homematic
+Type=simple
+Restart=on-failure
+RestartSec=3
+ExecStart=/usr/bin/python3 -u /home/homematic/homematic-prometheus-exporter/ExportHomematicMetrics.py
+Environment=HOMEMATIC_HOST=localhost
+
+[Install]
+WantedBy=multi-user.target
