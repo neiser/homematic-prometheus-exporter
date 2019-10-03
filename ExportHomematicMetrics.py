@@ -54,7 +54,7 @@ if __name__ == "__main__":
     for c in [PROCESS_COLLECTOR, PLATFORM_COLLECTOR, GC_COLLECTOR]:
         REGISTRY.unregister(c)
     REGISTRY.register(CustomCollector())
-    start_http_server(8000)
+    start_http_server(8001)
     print("Running...")
     while True:
         time.sleep(100)
